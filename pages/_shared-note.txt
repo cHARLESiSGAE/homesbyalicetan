@@ -1,0 +1,1 @@
+These pages are simple static HTML. If you want, we can refactor to a static site generator (Astro) for shared layout later.

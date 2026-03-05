@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Alice Tan | Homes By Alice Tan</title>
+  <meta name="description" content="Contact Alice Tan (Arcadia, CA Realtor). Call, email, or request a consultation." />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="/"><img src="/assets/logo.png" alt="Homes By Alice Tan logo"></a>
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="/pages/listings.html">Listings</a>
+    <a href="/pages/buying.html">Buying</a>
+    <a href="/pages/selling.html">Selling</a>
+    <a href="/pages/about.html">About</a>
+    <a href="/pages/testimonials.html">Testimonials</a>
+    <a href="/pages/contact.html">Contact</a>
+  </nav>
+  <div class="cta"><a class="btn ghost" href="tel:626-448-4853">Call</a><a class="btn primary" href="mailto:HomesByAliceTan@gmail.com">Email</a></div>
+</div></header>
+
+<main>
+  <section class="hero"><div class="container split">
+    <div>
+      <div class="badge">Arcadia, CA • DRE 02053538</div>
+      <h1 class="h1" style="font-size:38px">Let’s talk.</h1>
+      <p class="lede">Tell me what you’re trying to do (buy, sell, rent) and your timeline. I’ll reply with next steps and a simple plan.</p>
+      <div class="grid3" style="grid-template-columns:1fr;max-width:520px">
+        <div class="card"><h3>Call/Text</h3><p><a href="tel:626-448-4853">(626) 448-4853</a></p></div>
+        <div class="card"><h3>Email</h3><p><a href="mailto:HomesByAliceTan@gmail.com">HomesByAliceTan@gmail.com</a></p></div>
+        <div class="card"><h3>Service area</h3><p>Arcadia + nearby San Gabriel Valley communities</p></div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h2 style="margin:0 0 10px">Request a consultation</h2>
+      <p class="lede" style="margin:0 0 10px">Static-site note: this form needs a form backend (Netlify Forms, Formspree, Google Forms, or a CRM) to deliver messages.</p>
+
+      <form method="post" action="#">
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" placeholder="(###) ###-####" />
+          </div>
+          <div>
+            <label for="intent">I’m looking to…</label>
+            <select id="intent" name="intent">
+              <option>Buy</option>
+              <option>Sell</option>
+              <option>Rent</option>
+              <option>Just have a question</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Timeline, city/ZIP, price range, and must-haves…"></textarea>
+        </div>
+        <button class="btn primary" type="submit">Send</button>
+        <p style="margin:0;color:var(--muted);font-size:12px">By submitting, you agree to be contacted about your inquiry. (Add full compliance text as needed.)</p>
+      </form>
+    </div>
+  </div></section>
+</main>
+
+<div class="mobile-bar" aria-label="Quick actions">
+  <a class="btn ghost" href="/pages/listings.html">Listings</a>
+  <a class="btn ghost" href="tel:626-448-4853">Call</a>
+  <a class="btn primary" href="mailto:HomesByAliceTan@gmail.com">Email</a>
+</div>
+
+<footer class="site-footer"><div class="container footer-grid">
+  <div>© <span data-year></span> Homes By Alice Tan • DRE 02053538</div>
+  <div><a href="/pages/privacy.html">Privacy</a></div>
+</div></footer>
+<script src="/js/main.js"></script>
+</body></html>
