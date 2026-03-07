@@ -37,7 +37,7 @@
       <h2 style="margin:0 0 10px">Request a consultation</h2>
       <p class="lede" style="margin:0 0 10px">Static-site note: this form needs a form backend (Netlify Forms, Formspree, Google Forms, or a CRM) to deliver messages.</p>
 
-      <form method="post" action="#">
+      <form id="contact-form" method="post" action="/api/contact">
         <div class="form-row">
           <div>
             <label for="name">Name</label>
@@ -68,8 +68,42 @@
           <textarea id="message" name="message" placeholder="Timeline, city/ZIP, price range, and must-haves…"></textarea>
         </div>
         <button class="btn primary" type="submit">Send</button>
-        <p style="margin:0;color:var(--muted);font-size:12px">By submitting, you agree to be contacted about your inquiry. (Add full compliance text as needed.)</p>
+        <p id="form-status" style="margin:8px 0 0;color:var(--muted);font-size:12px"></p>
+        <p style="margin:8px 0 0;color:var(--muted);font-size:12px">By submitting, you agree to be contacted about your inquiry. (Add full compliance text as needed.)</p>
       </form>
+
+      <script>
+        (function () {
+          const form = document.getElementById('contact-form');
+          const statusEl = document.getElementById('form-status');
+          if (!form || !statusEl) return;
+
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            statusEl.textContent = 'Sending…';
+
+            try {
+              const formData = new FormData(form);
+              const resp = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'accept': 'application/json' },
+              });
+
+              const data = await resp.json().catch(() => ({}));
+              if (!resp.ok || !data.ok) {
+                statusEl.textContent = (data && data.error) ? data.error : 'Something went wrong. Please try again.';
+                return;
+              }
+
+              form.reset();
+              statusEl.textContent = 'Message sent. I’ll get back to you shortly.';
+            } catch (err) {
+              statusEl.textContent = 'Network error. Please try again, or email directly.';
+            }
+          });
+        })();
+      </script>
     </div>
   </div></section>
 </main>

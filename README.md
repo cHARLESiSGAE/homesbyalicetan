@@ -13,6 +13,19 @@ Static, mobile-first real estate agent website scaffold.
 - Cloudflare Pages (recommended)
 - Netlify / Vercel (also fine)
 
+## Contact form (email)
+The contact form posts to a Cloudflare Pages Function at `POST /api/contact`.
+
+### Configure (Cloudflare Pages)
+In **Pages → Settings → Environment variables**, add:
+- `RESEND_API_KEY` (required)
+- `CONTACT_TO_EMAIL` (optional; defaults to `HomesByAliceTan@gmail.com`)
+- `CONTACT_FROM_EMAIL` (optional; defaults to `onboarding@resend.dev`)
+
+Notes:
+- For production, you should verify a domain in Resend and set `CONTACT_FROM_EMAIL` to something like `contact@homesbyalicetan.com`.
+- `reply_to` is set to the visitor’s email, so Alice can hit “Reply” in Gmail.
+
 ## Pages planned
 - Home
 - Property Search (IDX placeholder)
