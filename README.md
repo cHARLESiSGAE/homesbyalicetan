@@ -19,7 +19,7 @@ The contact form posts to a Cloudflare Pages Function at `POST /api/contact`.
 ### Configure (Cloudflare Pages)
 In **Pages → Settings → Environment variables**, add:
 - `RESEND_API_KEY` (required)
-- `CONTACT_TO_EMAIL` (optional; defaults to `HomesByAliceTan@gmail.com`)
+- `CONTACT_TO_EMAIL` (optional; defaults to `homesbyalicetan@gmail.com`)
 - `CONTACT_FROM_EMAIL` (optional; defaults to `onboarding@resend.dev`)
 
 Notes:

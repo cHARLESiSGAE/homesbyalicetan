@@ -6,7 +6,7 @@
  * Required env vars (Cloudflare Pages → Settings → Environment variables):
  * - RESEND_API_KEY
  * Optional:
- * - CONTACT_TO_EMAIL (default: HomesByAliceTan@gmail.com)
+ * - CONTACT_TO_EMAIL (default: homesbyalicetan@gmail.com)
  * - CONTACT_FROM_EMAIL (default: onboarding@resend.dev)
  */
 
@@ -84,7 +84,7 @@ export async function onRequest(context) {
     return json(400, { ok: false, error: "Name and email are required." }, cors);
   }
 
-  const to = env.CONTACT_TO_EMAIL || "HomesByAliceTan@gmail.com";
+  const to = env.CONTACT_TO_EMAIL || "homesbyalicetan@gmail.com";
   const from = env.CONTACT_FROM_EMAIL || "onboarding@resend.dev";
 
   const subject = `New website lead: ${intent || "Inquiry"} — ${name}`;
